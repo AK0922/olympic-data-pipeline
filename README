@@ -1,0 +1,19 @@
+**************************
+Data Model
+***************************
+
+Table : Athlete
+    athlete_id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    sex CHAR(1),
+    age VARCHAR(10),
+    noc_id INTEGER REFERENCES noc(id),
+    CONSTRAINT Athlete_year UNIQUE(name,sex,age,noc_id)
+
+Table: Noc
+    noc_id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    sex CHAR(1),
+    age VARCHAR(10),
+    noc_id INTEGER REFERENCES noc(id),
+    CONSTRAINT Athlete_year UNIQUE(name,sex,age,noc_id)
