@@ -27,6 +27,14 @@ It will spin up 2 docker containers
 
 if you are interested in changing the input files specify the path to files at `docker-compose.yml`
 
+I have faced scenario where database tables were not getting created after container is up and running.
+I was able to resolve it by accessing the running db container and executing the `init.sql`
+Here are the steps:
+connect to container with command `docker exec -it db /bin/bash`\
+Run the command `psql -U dev -d olympic < init.sql`
+
+Then stop the containers and rerun docker-compose
+
 ## How to connect database
 
 Validate if the db container is up and running using the command `docker ps`\
