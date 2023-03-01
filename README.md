@@ -13,7 +13,7 @@
 For the sake of simplicity I have hardcoded the credentails for the database in the `docker-compose.yml` file
 
 In the interest in time, I have this working solution. 
-This can be further modularized, data cleaned, can make config abstractions and many more.
+This can be further modularized, data cleaned, can make config abstractions, remove hardcoded values and many more.
 
 
 ## How to Run Application
@@ -25,7 +25,7 @@ It will spin up 2 docker containers
 1. db - to host database and runs DDL commands
 2. app - to run the ignestion into database
 
-if you are interested in changing the input files specify the path to files at `docker-compose.yml`
+To change input file path can be changed `docker-compose.yml`
 
 I have faced scenario where database tables were not getting created after container is up and running.
 I was able to resolve it by accessing the running db container and executing the `init.sql`
