@@ -33,8 +33,6 @@ Here are the steps:
 connect to container with command `docker exec -it db /bin/bash`\
 Run the command `psql -U dev -d olympic < init.sql`
 
-Then stop the containers and rerun docker-compose
-
 ## How to connect database
 
 Validate if the db container is up and running using the command `docker ps`\

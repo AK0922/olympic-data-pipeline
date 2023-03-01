@@ -1,3 +1,6 @@
+create DATABASE olympic;
+\c olympic;
+
 CREATE TABLE noc (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
