@@ -25,6 +25,8 @@ It will spin up 2 docker containers
 1. db - to host database and runs DDL commands
 2. app - to run the ignestion into database
 
+if you are interested in changing the input files specify the path to files at `docker-compose.yml`
+
 ## How to connect database
 
 Validate if the db container is up and running using the command `docker ps`\
