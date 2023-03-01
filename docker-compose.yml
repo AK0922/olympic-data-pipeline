@@ -29,7 +29,7 @@ services:
       DB_NAME: olympic
       DB_USER: dev
       DB_PASSWORD: Qwerty@2
-    command: ["python", "app.py","archive/Athletes_summer_games.csv","archive/Athletes_winter_games.csv"]
+    command: ["python", "app.py","input/Athletes_summer_games.csv","input/Athletes_winter_games.csv"]
 
 volumes:
   db_data:
