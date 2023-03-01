@@ -1,15 +1,29 @@
+## Olympic Data pipeline
+
+ Normalized the 124 year Olympic data from these sources\
+ https://www.kaggle.com/datasets/nitishsharma01/olympics-124-years-datasettill-2020?se lect=Athletes_summer_games.csv\
+ https://www.kaggle.com/datasets/nitishsharma01/olympics-124-years-datasettill-2020?se lect=Athletes_winter_games.csv\
+
+1.Created Postgres database and normalized tables\
+2.Python library to read the source files and ingest to the created database tables in Postgres
+3.Dockerized the above 2 steps. 
+
+`Database/init.sql` file contains the DDL scripts to create the database tables and adding constraints, indexes.\
+`app/` folder contains the python scrip to read source files and write to the database tables.\
+For the sake of simplicity I have hardcoded the credentails for the database in the `docker-compose.yml` file\
+
+In the interest in time, I have this working solution. 
+This can be further modularized, data cleaned, can make config abstractions and many more.
+
+
 ## How to Run Application
 
 Building Docker using command `docker-compose build`\
-Running Application using Docker `docker-compose up`\
+Running Application using Docker `docker-compose up`
 
 It will spin up 2 docker containers
 1. db - to host database and runs DDL commands
 2. app - to run the ignestion into database
-
-For the sake of simplicity I have hardcoded the credentails for the database in the `docker-compose.yml` file\
-
-`Database/init.sql` file contains the DDL scripts to create the database tables and adding constraints, indexes
 
 ## How to connect database
 
