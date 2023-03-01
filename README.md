@@ -1,8 +1,8 @@
 ## Olympic Data pipeline
 
- Normalized the 124 year Olympic data from these sources\
+ Normalized the 124 year Olympic data from these sources and ingested into postgres database 
  https://www.kaggle.com/datasets/nitishsharma01/olympics-124-years-datasettill-2020?se lect=Athletes_summer_games.csv\
- https://www.kaggle.com/datasets/nitishsharma01/olympics-124-years-datasettill-2020?se lect=Athletes_winter_games.csv\
+ https://www.kaggle.com/datasets/nitishsharma01/olympics-124-years-datasettill-2020?se lect=Athletes_winter_games.csv
 
 1.Created Postgres database and normalized tables\
 2.Python library to read the source files and ingest to the created database tables in Postgres
@@ -10,7 +10,7 @@
 
 `Database/init.sql` file contains the DDL scripts to create the database tables and adding constraints, indexes.\
 `app/` folder contains the python scrip to read source files and write to the database tables.\
-For the sake of simplicity I have hardcoded the credentails for the database in the `docker-compose.yml` file\
+For the sake of simplicity I have hardcoded the credentails for the database in the `docker-compose.yml` file
 
 In the interest in time, I have this working solution. 
 This can be further modularized, data cleaned, can make config abstractions and many more.
@@ -75,15 +75,15 @@ once your inside the container to comment to the database `psql -u dev -d olympi
 Here is a brief explanation of the tables and their columns:
 
 Athlete table: contains information about individual athletes, such as their name, sex, age, country(noc_id).\
-The noc_id column is a foreign key that references the noc_id column in the noc table.\\
+The noc_id column is a foreign key that references the noc_id column in the noc table.
 
-Noc table: contains information about the teams that participated in the Olympics, NOC (National Olympic Committee) name and Team.\
+Noc table: contains information about the teams that participated in the Olympics, NOC (National Olympic Committee) name and Team.
 
-Event table: contains information about the events, including the sport name and event name.\
+Event table: contains information about the events, including the sport name and event name.
 
-Olympic_game table: contains information about the year,season,city where the game was hosted.\
+Olympic_game table: contains information about the year,season,city where the game was hosted.
 
-Athlete_event table: contains information about the performance of athletes in events, including the athlete ID, event ID, medal type (gold, silver, or bronze), and age of athlete during that event.\
+Athlete_event table: contains information about the performance of athletes in events, including the athlete ID, event ID, medal type (gold, silver, or bronze), and age of athlete during that event.
 
 Metadata table: tracks the each record ingestion into all the above tables.
 
